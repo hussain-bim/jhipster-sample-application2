@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-activity-heading">Create or edit a Activity</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!activity.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_activityName">Activity Name</label>
+                    <input type="text" class="form-control" name="activityName" id="field_activityName"
+                           formControlName="activityName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_activityDescription">Activity Description</label>
+                    <input type="text" class="form-control" name="activityDescription" id="field_activityDescription"
+                           formControlName="activityDescription"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_activityName">Activity Name</label>
+                    <select class="form-control" id="field_activityName" name="activityName" formControlName="activityName">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="taskOption.id === editForm.get('activityName').value?.id ? editForm.get('activityName').value : taskOption" *ngFor="let taskOption of tasks; trackBy: trackTaskById">{{taskOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
