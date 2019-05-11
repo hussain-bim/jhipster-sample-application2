@@ -13,10 +13,10 @@
                 <dd>
                     <span>{{activity.activityDescription}}</span>
                 </dd>
-                <dt><span>Activity Name</span></dt>
+                <dt><span>Task</span></dt>
                 <dd>
-                    <div *ngIf="activity.activityName">
-                        <a [routerLink]="['/task', activity.activityName?.id, 'view']">{{activity.activityName?.id}}</a>
+                    <div *ngIf="activity.task">
+                        <a [routerLink]="['/task', activity.task?.id, 'view']">{{activity.task?.id}}</a>
                     </div>
                 </dd>
             </dl>

@@ -35,7 +35,7 @@ public class Task implements Serializable {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(mappedBy = "activityName")
+    @OneToMany(mappedBy = "task")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Activity> titles = new HashSet<>();
 
@@ -90,13 +90,13 @@ public class Task implements Serializable {
 
     public Task addTitle(Activity activity) {
         this.titles.add(activity);
-        activity.setActivityName(this);
+        activity.setTask(this);
         return this;
     }
 
     public Task removeTitle(Activity activity) {
         this.titles.remove(activity);
-        activity.setActivityName(null);
+        activity.setTask(null);
         return this;
     }
 

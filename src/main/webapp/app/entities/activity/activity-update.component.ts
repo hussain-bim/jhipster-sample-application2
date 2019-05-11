@@ -24,7 +24,7 @@ export class ActivityUpdateComponent implements OnInit {
     id: [],
     activityName: [],
     activityDescription: [],
-    activityName: []
+    task: []
   });
 
   constructor(
@@ -55,7 +55,7 @@ export class ActivityUpdateComponent implements OnInit {
       id: activity.id,
       activityName: activity.activityName,
       activityDescription: activity.activityDescription,
-      activityName: activity.activityName
+      task: activity.task
     });
   }
 
@@ -79,7 +79,7 @@ export class ActivityUpdateComponent implements OnInit {
       id: this.editForm.get(['id']).value,
       activityName: this.editForm.get(['activityName']).value,
       activityDescription: this.editForm.get(['activityDescription']).value,
-      activityName: this.editForm.get(['activityName']).value
+      task: this.editForm.get(['task']).value
     };
     return entity;
   }

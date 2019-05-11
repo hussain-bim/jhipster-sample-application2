@@ -12,10 +12,9 @@
     ],
     "relationships": [
         {
-            "relationshipType": "many-to-one",
+            "relationshipName": "task",
             "otherEntityName": "task",
-            "otherEntityRelationshipName": "title",
-            "relationshipName": "activityName",
+            "relationshipType": "many-to-one",
             "otherEntityField": "id"
         }
     ],

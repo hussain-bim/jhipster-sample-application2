@@ -14,7 +14,7 @@
         {
             "relationshipType": "one-to-many",
             "otherEntityName": "activity",
-            "otherEntityRelationshipName": "activityName",
+            "otherEntityRelationshipName": "task",
             "relationshipName": "title"
         },
         {

@@ -24,7 +24,7 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="activity_name_id" type="bigint">
+            <column name="task_id" type="bigint">
                 <constraints nullable="true" />
             </column>
 
