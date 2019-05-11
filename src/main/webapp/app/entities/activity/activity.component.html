@@ -17,7 +17,7 @@
             <th><span>ID</span></th>
             <th><span>Activity Name</span></th>
             <th><span>Activity Description</span></th>
-            <th><span>Activity Name</span></th>
+            <th><span>Task</span></th>
             <th></th>
             </tr>
             </thead>
@@ -27,8 +27,8 @@
                 <td>{{activity.activityName}}</td>
                 <td>{{activity.activityDescription}}</td>
                 <td>
-                    <div *ngIf="activity.activityName">
-                        <a [routerLink]="['../task', activity.activityName?.id, 'view' ]" >{{activity.activityName?.id}}</a>
+                    <div *ngIf="activity.task">
+                        <a [routerLink]="['../task', activity.task?.id, 'view' ]" >{{activity.task?.id}}</a>
                     </div>
                 </td>
                 <td class="text-right">

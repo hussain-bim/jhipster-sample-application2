@@ -31,8 +31,8 @@ public class Activity implements Serializable {
     private String activityDescription;
 
     @ManyToOne
-    @JsonIgnoreProperties("titles")
-    private Task activityName;
+    @JsonIgnoreProperties("activities")
+    private Task task;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -69,17 +69,17 @@ public class Activity implements Serializable {
         this.activityDescription = activityDescription;
     }
 
-    public Task getActivityName() {
-        return activityName;
+    public Task getTask() {
+        return task;
     }
 
-    public Activity activityName(Task task) {
-        this.activityName = task;
+    public Activity task(Task task) {
+        this.task = task;
         return this;
     }
 
-    public void setActivityName(Task task) {
-        this.activityName = task;
+    public void setTask(Task task) {
+        this.task = task;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
