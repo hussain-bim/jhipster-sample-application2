@@ -37,7 +37,7 @@ public class Task implements Serializable {
 
     @OneToMany(mappedBy = "task")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Activity> titles = new HashSet<>();
+    private Set<Activity> activities = new HashSet<>();
 
     @ManyToMany(mappedBy = "tasks")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -79,29 +79,29 @@ public class Task implements Serializable {
         this.description = description;
     }
 
-    public Set<Activity> getTitles() {
-        return titles;
+    public Set<Activity> getActivities() {
+        return activities;
     }
 
-    public Task titles(Set<Activity> activities) {
-        this.titles = activities;
+    public Task activities(Set<Activity> activities) {
+        this.activities = activities;
         return this;
     }
 
-    public Task addTitle(Activity activity) {
-        this.titles.add(activity);
+    public Task addActivity(Activity activity) {
+        this.activities.add(activity);
         activity.setTask(this);
         return this;
     }
 
-    public Task removeTitle(Activity activity) {
-        this.titles.remove(activity);
+    public Task removeActivity(Activity activity) {
+        this.activities.remove(activity);
         activity.setTask(null);
         return this;
     }
 
-    public void setTitles(Set<Activity> activities) {
-        this.titles = activities;
+    public void setActivities(Set<Activity> activities) {
+        this.activities = activities;
     }
 
     public Set<Job> getJobs() {
