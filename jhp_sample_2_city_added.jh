@@ -82,7 +82,7 @@ relationship ManyToMany {
 }
 
 relationship OneToMany {
-	Task{title} to Activity{activityName}
+	Task{title} to Activity
 }
 // defining multiple OneToMany relationships with comments
 relationship OneToMany {
